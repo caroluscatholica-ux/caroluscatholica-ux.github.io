@@ -1,14 +1,177 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | [Nama Anda] - InGen Research</title>
+    <style>
+        /* CSS Dasar untuk Tema Jurassic Park */
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #333333; /* Abu-abu Arang */
+            color: #C1A72F; /* Kuning Kusam/Mustard */
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header, section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        h1, h2, h3 {
+            font-family: 'Georgia', serif; /* Ganti dengan font serif tebal yang sesuai */
+            color: #A80000; /* Merah Darah */
+            border-bottom: 2px solid #C1A72F;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        /* Efek Getar untuk Logo (Home) */
+        @keyframes shake {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            10% { transform: translate(-1px, -2px) rotate(-1deg); }
+            20% { transform: translate(-3px, 0px) rotate(1deg); }
+            30% { transform: translate(3px, 2px) rotate(0deg); }
+            40% { transform: translate(1px, -1px) rotate(1deg); }
+            50% { transform: translate(-1px, 2px) rotate(-1deg); }
+            60% { transform: translate(-3px, 1px) rotate(0deg); }
+            70% { transform: translate(3px, 1px) rotate(-1deg); }
+            80% { transform: translate(-1px, -1px) rotate(1deg); }
+            90% { transform: translate(1px, 2px) rotate(0deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
+        }
+        #jurassic-logo {
+            width: 300px; /* Atur ukuran logo */
+            animation: shake 0.5s infinite linear;
+            filter: drop-shadow(0 0 10px #A80000);
+        }
+        /* Style untuk About Me (File Penelitian) */
+        .file-data {
+            background-color: #1E3A24; /* Hijau Hutan Gelap */
+            padding: 30px;
+            margin: 0 auto;
+            max-width: 600px;
+            border: 3px solid #C1A72F;
+            text-align: left;
+        }
+        .file-data p {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+        /* Style untuk Contact Form (Radio) */
+        .radio-form {
+            background-color: #3a2717; /* Cokelat untuk tampilan radio kuno */
+            padding: 40px;
+            max-width: 500px;
+            margin: 0 auto;
+            border-radius: 10px;
+            border: 5px outset #6b4d3a;
+        }
+        .radio-form input[type="text"],
+        .radio-form input[type="email"],
+        .radio-form textarea {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 2px solid #A80000;
+            background-color: #000;
+            color: #C1A72F;
+        }
+        .radio-form button {
+            background-color: #A80000;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2em;
+            border-radius: 5px;
+            /* Tombol PTT */
+            box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        .skill-item {
+            display: inline-block;
+            margin: 15px;
+            padding: 10px 20px;
+            border: 1px solid #C1A72F;
+            border-radius: 20px;
+            background-color: rgba(30, 58, 36, 0.7);
+        }
+    </style>
 </head>
-
 <body>
-  
-</body>
 
+    <nav style="background-color: #1E3A24; padding: 10px 0;">
+        <a href="#home" style="color: #C1A72F; margin: 0 15px; text-decoration: none;">HOME</a>
+        <a href="#about" style="color: #C1A72F; margin: 0 15px; text-decoration: none;">ABOUT ME</a>
+        <a href="#hobby" style="color: #C1A72F; margin: 0 15px; text-decoration: none;">HOBBY</a>
+        <a href="#skill" style="color: #C1A72F; margin: 0 15px; text-decoration: none;">SKILL</a>
+        <a href="#contact" style="color: #C1A72F; margin: 0 15px; text-decoration: none;">CONTACT</a>
+    </nav>
+
+    <section id="home">
+        <img id="jurassic-logo" src="[Link Gambar Logo Jurassic Park Anda]" alt="Logo Jurassic Park - Bergetar">
+        <h1>SELAMAT DATANG DI PUSAT OPERASI INGEN</h1>
+        <p>MEMBANGUN MASA DEPAN, SATU BARIS KODE PADA SATU WAKTU.</p>
+    </section>
+
+    <section id="about">
+        <h2>:: FILE PENELITIAN KARYAWAN ::</h2>
+        <div class="file-data">
+            <p><strong>STATUS:</strong> AKTIF / AUTHORIZED PERSONNEL</p>
+            <p><strong>NAMA LENGKAP:</strong> [Nama Anda]</p>
+            <p><strong>DEPARTEMEN:</strong> [Desain Web / Digital DNA Sequencing]</p>
+            <p><strong>KODE AKSES:</strong> [Tanggal Lahir / Versi Kode]</p>
+            <hr style="border-color: #C1A72F;">
+            <p>[Deskripsi Diri Singkat Anda. Misalnya: Saya adalah seorang Web Designer yang fokus pada UX/UI. Misi saya adalah merekonstruksi pengalaman digital yang menakjubkan dan berdampak.]</p>
+            <p>END OF FILE.</p>
+        </div>
+    </section>
+
+    <section id="hobby">
+        <h2>:: FOSIL FAVORIT: TYRANNOSAURUS REX ::</h2>
+        <img src="[Link Gambar T-Rex/Kerangka]" alt="Sketsa Kerangka T-Rex" style="width: 200px; margin-bottom: 20px;">
+        
+        <div style="max-width: 800px; margin: auto;">
+            <p><strong>FAKTA HOBBY #1: [Hobby Anda, e.g., Membaca Buku Fantasi]</strong></p>
+            <p style="color: #ddd;">* Analisis Lengan Atas T-Rex: Lengan atas yang pendek dan kuat, mencerminkan fokus pada alur cerita yang padat dan *world-building* yang efisien. [Jelaskan Hobi Anda dengan metafora dinosaurus]</p>
+            
+            <p><strong>FAKTA HOBBY #2: [Hobby Anda, e.g., Bermain Game Strategi]</strong></p>
+            <p style="color: #ddd;">* Analisis Gigi T-Rex: Kekuatan gigitan yang luar biasa, melambangkan kemampuan saya dalam menyusun strategi kompleks dan dominasi dalam persaingan. [Jelaskan Hobi Anda yang lain]</p>
+        </div>
+    </section>
+
+    <section id="skill">
+        <h2>:: PETA EVOLUSI KEMAMPUAN ::</h2>
+        <p>Evolusi Kemampuan dari Era Primitif hingga Modern Digital (Garis Waktu/Timeline)</p>
+        
+        <div style="max-width: 900px; margin: 20px auto;">
+            <div class="skill-item">PRIMITIVE PHASE: HTML5 & CSS3 (Era Trias)</div>
+            <div class="skill-item">EVOLVED PHASE: JavaScript & React (Era Jura)</div>
+            <div class="skill-item">MODERN PHASE: Figma & UX/UI Design (Era Kuarterner)</div>
+            <div class="skill-item">SOFT SKILL: Team Collaboration (Insting Kawanan)</div>
+        </div>
+        </section>
+
+    <section id="contact">
+        <h2>:: SISTEM KOMUNIKASI DARURAT ::</h2>
+        <p>Masukkan koordinat Anda untuk komunikasi segera. (Semua transmisi akan direspon)</p>
+        
+        <form class="radio-form" action="[Ganti dengan endpoint form Anda]" method="POST">
+            <label for="nama" style="display: block; margin-bottom: 5px;">Kode Pengenal (Nama):</label>
+            <input type="text" id="nama" name="nama" placeholder="Kode Alpha-7" required>
+            
+            <label for="email" style="display: block; margin-bottom: 5px;">Frekuensi (Email):</label>
+            <input type="email" id="email" name="email" placeholder="frekuensi@ingen.com" required>
+            
+            <label for="pesan" style="display: block; margin-bottom: 5px;">Pesan Transmisi (Isi Pesan):</label>
+            <textarea id="pesan" name="pesan" rows="4" placeholder="Laporkan anomali di Sektor 4..." required></textarea>
+            
+            <button type="submit">TRANSMIT (PTT)</button>
+        </form>
+    </section>
+
+    <footer style="background-color: #111; color: #555; padding: 20px; font-size: 0.8em;">
+        <p>&copy; 2025 InGen Research. All Rights Reserved. Danger: Unauthorized Access Prohibited.</p>
+    </footer>
+
+</body>
 </html>
