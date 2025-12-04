@@ -182,7 +182,7 @@
         <canvas id="simulasiCanvas" width="800" height="600"></canvas>
 
         <div class="game-info" id="gameInfo" style="display: none;">
-            <p style="color: #fff;"><strong>PEMBERITAHUAN:</strong> Sistem ini adalah simulasi dua pemain (PONG/Air Hockey). Lihat **Console** browser (Tekan F12) untuk melihat laporan **Gol**.</p>
+            <p style="color: #fff;"><strong>PEMBERITAHUAN:</strong> Skor kini ditampilkan di atas lapangan. Tombol **N** berfungsi untuk **Reset Skor**.</p>
             <p><strong>Kontrol P1 (Kiri):</strong> W (Atas), S (Bawah)</p>
             <p><strong>Kontrol P2 (Kanan):</strong> P (Atas), L (Bawah)</p>
         </div>
@@ -227,6 +227,10 @@
         
         let paddle1, paddle2, puck;
 
+        // SKOR BARU
+        let skorP1 = 0;
+        let skorP2 = 0;
+
         // Fungsi yang dipanggil saat tombol diklik
         function mulaiGame() {
             if (running) return;
@@ -244,6 +248,10 @@
             paddle1 = { x: 50, y: (TINGGI - PADDLE_TINGGI) / 2, dy: 0 };
             paddle2 = { x: LEBAR - 50 - PADDLE_LEBAR, y: (TINGGI - PADDLE_TINGGI) / 2, dy: 0 };
             puck = { x: LEBAR / 2, y: TINGGI / 2, dx: 4, dy: 4 };
+
+            // Reset skor saat game dimulai
+            skorP1 = 0;
+            skorP2 = 0;
 
             // Mulai Game Loop dan atur kontrol
             resetPuck(1);
@@ -269,6 +277,7 @@
         function drawField() {
             ctx.clearRect(0, 0, LEBAR, TINGGI);
             
+            // Garis tengah
             ctx.strokeStyle = '#C1A72F';
             ctx.lineWidth = 3;
             ctx.beginPath();
@@ -276,9 +285,22 @@
             ctx.lineTo(LEBAR / 2, TINGGI);
             ctx.stroke();
             
+            // Gambar Gawang
             ctx.fillStyle = '#A80000';
             ctx.fillRect(0, TINGGI / 2 - 50, 10, 100);
             ctx.fillRect(LEBAR - 10, TINGGI / 2 - 50, 10, 100);
+
+            // --- MENAMPILKAN SKOR BARU ---
+            ctx.fillStyle = '#C1A72F'; // Warna kuning kusam untuk teks
+            ctx.font = '40px Courier New';
+            ctx.textAlign = 'center';
+            
+            // Skor P1 (Kiri)
+            ctx.fillText(skorP1, LEBAR / 2 - 50, 50);
+            
+            // Skor P2 (Kanan)
+            ctx.fillText(skorP2, LEBAR / 2 + 50, 50);
+            // ----------------------------
         }
 
         // --- Fungsi Pembaruan Logika ---
@@ -330,9 +352,11 @@
             // 4. Deteksi Gol
             if (puck.x < 0) {
                 console.log(":: ALERT INGEN :: Gol terdeteksi pada gawang Kiri. Poin untuk Pemain Kanan!");
+                skorP2++; // Tambah skor P2
                 resetPuck(-1);
             } else if (puck.x > LEBAR) {
                 console.log(":: ALERT INGEN :: Gol terdeteksi pada gawang Kanan. Poin untuk Pemain Kiri!");
+                skorP1++; // Tambah skor P1
                 resetPuck(1);
             }
 
@@ -367,7 +391,7 @@
                     case 'S':
                         paddle1.dy = PADDLE_KECEPATAN;
                         break;
-                    // KONTROL P2 (KANAN) BARU
+                    // KONTROL P2 (KANAN)
                     case 'p':
                     case 'P':
                         paddle2.dy = -PADDLE_KECEPATAN;
@@ -375,6 +399,13 @@
                     case 'l':
                     case 'L':
                         paddle2.dy = PADDLE_KECEPATAN;
+                        break;
+                    // KONTROL RESET SKOR BARU (N)
+                    case 'n':
+                    case 'N':
+                        skorP1 = 0;
+                        skorP2 = 0;
+                        console.log(":: ALERT INGEN :: Skor telah diatur ulang (0-0) oleh Tombol N.");
                         break;
                 }
             });
@@ -388,7 +419,6 @@
                     case 'S':
                         paddle1.dy = 0;
                         break;
-                    // KONTROL P2 (KANAN) BARU
                     case 'p':
                     case 'P':
                     case 'l':
