@@ -19,8 +19,8 @@
             text-align: center;
         }
         h1, h2, h3 {
-            font-family: 'Georgia', serif; /* Ganti dengan font serif tebal yang sesuai */
-            color: #FFFFFF; /* Merah Darah */
+            font-family: 'Georgia', serif; 
+            color: #FFFFFF; /* Putih */
             border-bottom: 2px solid #C1A72F;
             display: inline-block;
             padding-bottom: 5px;
@@ -39,10 +39,11 @@
             90% { transform: translate(1px, 2px) rotate(0deg); }
             100% { transform: translate(1px, -2px) rotate(-1deg); }
         }
-        #jurassic-logo {
+        .jp-logo {
             width: 300px; /* Atur ukuran logo */
+            /* Mengubah nama class di sini agar sesuai dengan yang ada di HTML */
             animation: shake 0.5s infinite linear;
-            filter: drop-shadow(0 0 10px #A80000);
+            filter: drop-shadow(0 0 10px #A80000); /* Efek bayangan merah */
         }
         /* Style untuk About Me (File Penelitian) */
         .file-data {
@@ -87,13 +88,22 @@
             /* Tombol PTT */
             box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
         }
-        .skill-item {
-            display: inline-block;
-            margin: 15px;
-            padding: 10px 20px;
-            border: 1px solid #C1A72F;
-            border-radius: 20px;
-            background-color: rgba(30, 58, 36, 0.7);
+
+        /* --- STYLE KHUSUS UNTUK BAGIAN GAME (SKILL) --- */
+        #simulasiCanvas {
+            /* Warna lapangan yang disesuaikan */
+            background-color: #004d00; 
+            border: 5px solid #C1A72F; 
+            display: block;
+            margin: 20px auto;
+        }
+        .game-info {
+             max-width: 800px;
+             margin: 20px auto 0 auto;
+             background-color: rgba(0, 0, 0, 0.5);
+             padding: 15px;
+             border: 1px solid #C1A72F;
+             text-align: left;
         }
     </style>
 </head>
@@ -103,7 +113,7 @@
         <a href="#home" style="color: #C1A72F; margin: 0 15px; text-decoration: none;">HOME</a>
         <a href="#about" style="color: #C1A72F; margin: 0 15px; text-decoration: none;">ABOUT ME</a>
         <a href="#hobby" style="color: #C1A72F; margin: 0 15px; text-decoration: none;">HOBBY</a>
-        <a href="#skill" style="color: #C1A72F; margin: 0 15px; text-decoration: none;">SKILL</a>
+        <a href="#skill" style="color: #C1A72F; margin: 0 15px; text-decoration: none;">SIMULASI LATIHAN</a>
         <a href="#contact" style="color: #C1A72F; margin: 0 15px; text-decoration: none;">CONTACT</a>
     </nav>
 
@@ -123,7 +133,7 @@
             <p><strong>SEKOLAH:</strong> SMP Eksperimental Mangunanan</p>
             <p><strong>TANGGAL LAHIR:</strong> 16-11-2011</p>
             <hr style="border-color: #C1A72F;">
-            <p></p>
+            <p>Memiliki otorisasi untuk mengakses sistem simulasi pelatihan lapangan (Field Training Simulation System).</p>
         </div>
     </section>
 
@@ -132,37 +142,39 @@
         
         <img src="hockey.jpg" alt="Sketsa Kerangka T-Rex" style="width: 200px; margin: 0 auto 20px auto; display: block;">
         
-        <div style="max-width: 800px; margin: auto; text-align="justify">
+        <div style="max-width: 800px; margin: auto; text-align: left;">
             <p><strong>FAKTA HOBBY #1: Hockey Lapangan</strong></p>
             <p style="color: #FFFFFF;"> Hockey Lapangan adalah permainan tim yang dimainkan di lapangan rumput atau sintetis di luar ruangan, di mana dua tim berisi masing-masing 11 pemain menggunakan tongkat melengkung untuk memukul bola ke gawang lawan.</p>
             
-            <p><strong>FAKTA HOBBY #2: Teknik Shooting</p>
+            <p><strong>FAKTA HOBBY #2: Teknik Shooting</strong></p>
             <p style="color: #FFFFFF;">Teknik Slap Shot (Tembakan Keras)
+                <br>
+                Slap shot adalah tembakan paling kuat, ideal untuk jarak jauh.<br>
                 
-Slap shot adalah tembakan paling kuat, ideal untuk jarak jauh.<br>
+                1.Ayunan Mundur (Backswing): Tarik stik Anda ke belakang setinggi pinggang atau bahu, tergantung seberapa keras Anda ingin menembak. Jaga mata Anda tetap pada bola.<br>
                 
-1.Ayunan Mundur (Backswing): Tarik stik Anda ke belakang setinggi pinggang atau bahu, tergantung seberapa keras Anda ingin menembak. Jaga mata Anda tetap pada bola [1].<br>
+                2.Kontak dengan Permukaan: Saat mengayun ke depan, sebelum menyentuh bola, biarkan bagian bawah stik Anda sedikit membentur permukaan lapangan tepat di belakang bola. Ini menciptakan energi tekukan pada stik (disebut flex).<br>
                 
-2.Kontak dengan Permukaan: Saat mengayun ke depan, sebelum menyentuh bola, biarkan bagian bawah stik Anda sedikit membentur permukaan lapangan tepat di belakang bola. Ini menciptakan energi tekukan pada stik (disebut flex) [1].<br>
+                3.Kontak dengan Bola: Segera setelah menyentuh permukaan, pisau stik akan mengenai bagian belakang bola.<br>
                 
-3.Kontak dengan Bola: Segera setelah menyentuh permukaan, pisau stik akan mengenai bagian belakang bola.<br>
-                
-4.Tindak Lanjut (Follow-through): Arahkan stik Anda ke target yang dituju. Jika Anda ingin bola tetap rendah, jaga agar tindak lanjut Anda tetap rendah. Jika ingin bola naik, akhiri ayunan Anda lebih tinggi</p>
+                4.Tindak Lanjut (Follow-through): Arahkan stik Anda ke target yang dituju. Jika Anda ingin bola tetap rendah, jaga agar tindak lanjut Anda tetap rendah. Jika ingin bola naik, akhiri ayunan Anda lebih tinggi</p>
         </div>
     </section>
 
     <section id="skill">
-        <h2>:: PETA EVOLUSI KEMAMPUAN ::</h2>
-        <p>Evolusi Kemampuan dari Era Primitif hingga Modern Digital (Garis Waktu/Timeline)</p>
+        <h2>:: SIMULASI LATIHAN LAPANGAN (FIELD TRAINING SIMULATION) ::</h2>
+        <p>Uji kemampuan koordinasi dan refleks Anda menggunakan Modul Air Hockey InGen.</p>
         
-        <div style="max-width: 900px; margin: 20px auto;">
-            <div class="skill-item">PRIMITIVE PHASE: HTML5 & CSS3 (Era Trias)</div>
-            <div class="skill-item">EVOLVED PHASE: JavaScript & React (Era Jura)</div>
-            <div class="skill-item">MODERN PHASE: Figma & UX/UI Design (Era Kuarterner)</div>
-            <div class="skill-item">SOFT SKILL: Team Collaboration (Insting Kawanan)</div>
-        </div>
-        </section>
+        <canvas id="simulasiCanvas" width="800" height="600"></canvas>
 
+        <div class="game-info">
+            <p style="color: #fff;"><strong>PEMBERITAHUAN:</strong> Sistem ini adalah simulasi dua pemain (PONG/Air Hockey) untuk melatih refleks. Lihat **Console** browser (Tekan F12) untuk melihat laporan **Gol**.</p>
+            <p><strong>Kontrol P1 (Kiri):</strong> W (Atas), S (Bawah)</p>
+            <p><strong>Kontrol P2 (Kanan):</strong> Panah Atas, Panah Bawah</p>
+        </div>
+        
+    </section>
+    
     <section id="contact">
         <h2>:: SISTEM KOMUNIKASI DARURAT ::</h2>
         <p>Kritik Dan Saran Tentang Web Ini</p>
@@ -172,11 +184,11 @@ Slap shot adalah tembakan paling kuat, ideal untuk jarak jauh.<br>
             <input type="text" id="nama" name="nama" placeholder="Nama Anda" required>
             
             <label for="email" style="display: block; margin-bottom: 5px;">Tanggal Lahir:</label>
-            <input type="email" id="email" name="email" placeholder="Tanggal lahir Anda (16-11-2011)" required>
+            <input type="text" id="email" name="email" placeholder="Tanggal lahir Anda (16-11-2011)" required>
             
             <label for="pesan" style="display: block; margin-bottom: 5px;">Kritik Atau Saran:</label>
             <textarea id="pesan" name="pesan" rows="4" placeholder="Ketikkan Disini" required></textarea>
-              
+            
             <button type="submit">KIRIM</button>
         </form>
     </section>
@@ -184,6 +196,194 @@ Slap shot adalah tembakan paling kuat, ideal untuk jarak jauh.<br>
     <footer style="background-color: #111; color: #555; padding: 20px; font-size: 0.8em;">
         <p>&copy; 2025 InGen Research. All Rights Reserved. Danger: Unauthorized Access Prohibited.</p>
     </footer>
+
+    <script>
+        // Ambil elemen canvas yang baru
+        const canvas = document.getElementById('simulasiCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // --- Pengaturan Game ---
+        const LEBAR = canvas.width;
+        const TINGGI = canvas.height;
+        // Menggunakan warna putih agar terlihat di lapangan hijau
+        const WARNA_PADDLE = '#FFFFFF'; 
+        const WARNA_PUCK = '#FFFFFF';
+
+        // --- Pemain/Paddle ---
+        const PADDLE_LEBAR = 15;
+        const PADDLE_TINGGI = 100;
+        const PADDLE_KECEPATAN = 6;
+
+        // Pemain 1 (Kiri)
+        let paddle1 = {
+            x: 50,
+            y: (TINGGI - PADDLE_TINGGI) / 2,
+            dy: 0 // Kecepatan vertikal
+        };
+
+        // Pemain 2 (Kanan)
+        let paddle2 = {
+            x: LEBAR - 50 - PADDLE_LEBAR,
+            y: (TINGGI - PADDLE_TINGGI) / 2,
+            dy: 0
+        };
+
+        // --- Bola/Puck ---
+        const PUCK_RADIUS = 10;
+        let puck = {
+            x: LEBAR / 2,
+            y: TINGGI / 2,
+            dx: 4, // Kecepatan horizontal
+            dy: 4  // Kecepatan vertikal
+        };
+
+        // --- Fungsi Menggambar ---
+
+        function drawPaddle(x, y) {
+            ctx.fillStyle = WARNA_PADDLE;
+            ctx.fillRect(x, y, PADDLE_LEBAR, PADDLE_TINGGI);
+        }
+
+        function drawPuck() {
+            ctx.beginPath();
+            ctx.arc(puck.x, puck.y, PUCK_RADIUS, 0, Math.PI * 2);
+            ctx.fillStyle = WARNA_PUCK;
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        function drawField() {
+            // Latar belakang sudah diatur oleh CSS di #simulasiCanvas
+            
+            // Garis tengah
+            ctx.strokeStyle = '#C1A72F'; // Warna kuning kusam untuk garis lapangan
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.moveTo(LEBAR / 2, 0);
+            ctx.lineTo(LEBAR / 2, TINGGI);
+            ctx.stroke();
+            
+            // Gambar Gawang 
+            ctx.fillStyle = '#A80000'; // Merah Darah untuk gawang
+            ctx.fillRect(0, TINGGI / 2 - 50, 10, 100);
+            ctx.fillRect(LEBAR - 10, TINGGI / 2 - 50, 10, 100);
+        }
+
+        // --- Fungsi Pembaruan Logika ---
+
+        function update() {
+            // 1. Pergerakan Paddle
+            paddle1.y += paddle1.dy;
+            paddle2.y += paddle2.dy;
+
+            // Batasi pergerakan paddle
+            paddle1.y = Math.max(0, Math.min(paddle1.y, TINGGI - PADDLE_TINGGI));
+            paddle2.y = Math.max(0, Math.min(paddle2.y, TINGGI - PADDLE_TINGGI));
+
+            // 2. Pergerakan Puck
+            puck.x += puck.dx;
+            puck.y += puck.dy;
+
+            // Pantulan Atas/Bawah
+            if (puck.y - PUCK_RADIUS < 0 || puck.y + PUCK_RADIUS > TINGGI) {
+                puck.dy = -puck.dy;
+            }
+
+            // 3. Deteksi Tabrakan (Paddle vs Puck)
+            // [Logika Tabrakan Tetap Sama]
+
+            // Paddle Kiri (P1)
+            if (
+                puck.x - PUCK_RADIUS < paddle1.x + PADDLE_LEBAR &&
+                puck.x - PUCK_RADIUS > paddle1.x &&
+                puck.y + PUCK_RADIUS > paddle1.y &&
+                puck.y - PUCK_RADIUS < paddle1.y + PADDLE_TINGGI
+            ) {
+                if (puck.dx < 0) {
+                     puck.dx = -puck.dx;
+                }
+            }
+
+            // Paddle Kanan (P2)
+            if (
+                puck.x + PUCK_RADIUS > paddle2.x &&
+                puck.x + PUCK_RADIUS < paddle2.x + PADDLE_LEBAR &&
+                puck.y + PUCK_RADIUS > paddle2.y &&
+                puck.y - PUCK_RADIUS < paddle2.y + PADDLE_TINGGI
+            ) {
+                if (puck.dx > 0) {
+                    puck.dx = -puck.dx;
+                }
+            }
+
+            // 4. Deteksi Gol
+            if (puck.x < 0) {
+                // Gol untuk P2 (Bola keluar kiri)
+                console.log(":: ALERT INGEN :: Gol terdeteksi pada gawang Kiri. Poin untuk Pemain Kanan!");
+                resetPuck(-1);
+            } else if (puck.x > LEBAR) {
+                // Gol untuk P1 (Bola keluar kanan)
+                console.log(":: ALERT INGEN :: Gol terdeteksi pada gawang Kanan. Poin untuk Pemain Kiri!");
+                resetPuck(1);
+            }
+
+            // 5. Gambar Ulang
+            drawField();
+            drawPaddle(paddle1.x, paddle1.y);
+            drawPaddle(paddle2.x, paddle2.y);
+            drawPuck();
+
+            // Loop game
+            requestAnimationFrame(update);
+        }
+
+        function resetPuck(arahAwal) {
+            puck.x = LEBAR / 2;
+            puck.y = TINGGI / 2;
+            puck.dx = 4 * arahAwal;
+            puck.dy = 4 * (Math.random() > 0.5 ? 1 : -1); 
+        }
+
+
+        // --- Kontrol Input ---
+        document.addEventListener('keydown', function(event) {
+            switch (event.key) {
+                case 'w':
+                case 'W':
+                    paddle1.dy = -PADDLE_KECEPATAN;
+                    break;
+                case 's':
+                case 'S':
+                    paddle1.dy = PADDLE_KECEPATAN;
+                    break;
+                case 'ArrowUp':
+                    paddle2.dy = -PADDLE_KECEPATAN;
+                    break;
+                case 'ArrowDown':
+                    paddle2.dy = PADDLE_KECEPATAN;
+                    break;
+            }
+        });
+
+        document.addEventListener('keyup', function(event) {
+            switch (event.key) {
+                case 'w':
+                case 'W':
+                case 's':
+                case 'S':
+                    paddle1.dy = 0;
+                    break;
+                case 'ArrowUp':
+                case 'ArrowDown':
+                    paddle2.dy = 0;
+                    break;
+            }
+        });
+
+        // Mulai Game Loop
+        resetPuck(1); // Mulai dengan bola bergerak ke kanan
+        update();
+    </script>
 
 </body>
 </html>
