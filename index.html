@@ -91,7 +91,7 @@
         #simulasiCanvas {
             background-color: #004d00; 
             border: 5px solid #C1A72F; 
-            display: none; /* SEMBUNYIKAN CANVAS SECARA DEFAULT */
+            display: none; 
             margin: 20px auto;
         }
         .game-info {
@@ -169,7 +169,7 @@
                 
                 3.Kontak dengan Bola: Segera setelah menyentuh permukaan, pisau stik akan mengenai bagian belakang bola.<br>
                 
-                4.Tindak Lanjut (Follow-through): Arahkan stik Anda ke target yang dituju. Jika Anda ingin bola tetap rendah, jaga agar tindak lanjut Anda tetap rendah. Jika ingin bola naik, akhiri ayunan Anda lebih tinggi</p>
+                4.Tindak Lanjut (Follow-through): Arahkan stik Anda ke target yang dituju. Jika Anda ingin bola tetap rendah, jaga agar tindak lanjut Anda tetap rendah. Jika ingin bola naik, akhiri ayungan Anda lebih tinggi</p>
         </div>
     </section>
 
@@ -181,7 +181,8 @@
 
         <canvas id="simulasiCanvas" width="800" height="600"></canvas>
 
-        <div class="game-info" id="gameInfo" style="display: none;"> <p style="color: #fff;"><strong>PEMBERITAHUAN:</strong> Sistem ini adalah simulasi dua pemain (PONG/Air Hockey). Lihat **Console** browser (Tekan F12) untuk melihat laporan **Gol**.</p>
+        <div class="game-info" id="gameInfo" style="display: none;">
+            <p style="color: #fff;"><strong>PEMBERITAHUAN:</strong> Sistem ini adalah simulasi dua pemain (PONG/Air Hockey). Lihat **Console** browser (Tekan F12) untuk melihat laporan **Gol**.</p>
             <p><strong>Kontrol P1 (Kiri):</strong> W (Atas), S (Bawah)</p>
             <p><strong>Kontrol P2 (Kanan):</strong> P (Atas), L (Bawah)</p>
         </div>
@@ -212,7 +213,7 @@
 
     <script>
         let canvas, ctx;
-        let running = false; // Status game
+        let running = false;
 
         // --- Pengaturan Game ---
         const LEBAR = 800;
@@ -224,23 +225,22 @@
         const PADDLE_KECEPATAN = 6;
         const PUCK_RADIUS = 10;
         
-        // Variabel yang perlu dideklarasikan di luar fungsi agar bisa diakses
         let paddle1, paddle2, puck;
 
         // Fungsi yang dipanggil saat tombol diklik
         function mulaiGame() {
-            if (running) return; // Mencegah game dimulai berulang kali
+            if (running) return;
 
             // Tampilkan Canvas dan Info Kontrol
             canvas = document.getElementById('simulasiCanvas');
             canvas.style.display = 'block';
             document.getElementById('gameInfo').style.display = 'block';
-            document.getElementById('btnMulaiSimulasi').style.display = 'none'; // Sembunyikan tombol
+            document.getElementById('btnMulaiSimulasi').style.display = 'none';
 
             ctx = canvas.getContext('2d');
             running = true;
 
-            // Inisialisasi posisi awal setelah canvas di-load
+            // Inisialisasi posisi awal 
             paddle1 = { x: 50, y: (TINGGI - PADDLE_TINGGI) / 2, dy: 0 };
             paddle2 = { x: LEBAR - 50 - PADDLE_LEBAR, y: (TINGGI - PADDLE_TINGGI) / 2, dy: 0 };
             puck = { x: LEBAR / 2, y: TINGGI / 2, dx: 4, dy: 4 };
@@ -251,7 +251,7 @@
             setupControls();
         }
 
-        // --- Fungsi Menggambar (Tetap sama) ---
+        // --- Fungsi Menggambar ---
 
         function drawPaddle(x, y) {
             ctx.fillStyle = WARNA_PADDLE;
@@ -281,7 +281,7 @@
             ctx.fillRect(LEBAR - 10, TINGGI / 2 - 50, 10, 100);
         }
 
-        // --- Fungsi Pembaruan Logika (Tetap sama, hanya bergantung pada running) ---
+        // --- Fungsi Pembaruan Logika ---
 
         function update() {
             if (!running) return;
@@ -353,7 +353,7 @@
             puck.dy = 4 * (Math.random() > 0.5 ? 1 : -1); 
         }
 
-        // --- Kontrol Input (Didefinisikan dalam fungsi terpisah) ---
+        // --- Kontrol Input ---
 
         function setupControls() {
             document.addEventListener('keydown', function(event) {
@@ -367,9 +367,12 @@
                     case 'S':
                         paddle1.dy = PADDLE_KECEPATAN;
                         break;
+                    // KONTROL P2 (KANAN) BARU
+                    case 'p':
                     case 'P':
                         paddle2.dy = -PADDLE_KECEPATAN;
                         break;
+                    case 'l':
                     case 'L':
                         paddle2.dy = PADDLE_KECEPATAN;
                         break;
@@ -385,7 +388,10 @@
                     case 'S':
                         paddle1.dy = 0;
                         break;
+                    // KONTROL P2 (KANAN) BARU
+                    case 'p':
                     case 'P':
+                    case 'l':
                     case 'L':
                         paddle2.dy = 0;
                         break;
